@@ -4,4 +4,9 @@ jobs:
   labelWhenApproved:
     runs-on: ubuntu-latest
     steps:
-    - uses: pullreminders/label-when-approved-action@v1
+    - name: hello automated approval
+      uses: pullreminders/label-when-approved-action@master
+      env:
+        APPROVALS: "1"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADD_LABEL: "approved"
